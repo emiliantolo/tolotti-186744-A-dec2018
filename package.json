@@ -1,7 +1,6 @@
 {
   "name": "startingpoint",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node api.js",
@@ -13,5 +12,14 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "node-fetch": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trentose2/exam-A-dec2018.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trentose2/exam-A-dec2018/issues"
+  },
+  "homepage": "https://github.com/trentose2/exam-A-dec2018#readme",
+  "description": ""
 }

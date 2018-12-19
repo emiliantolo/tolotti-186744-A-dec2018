@@ -18,6 +18,17 @@ app.get('/bimbumbam', (req, res) => {
     res.json({result: Math.ceil(Math.random()*5)})
 })
 
+app.get('/play', (req, res) => {
+
+    return fetch("https://tolotti-186744-a-dec2018.herokuapp.com/bimbumbam")
+	.then(response => {
+	    return response.json()})
+	.then(resBody => {
+	    let v=parseInt(resBody.result)+parseInt(req.query.player1)
+	    res.json({result: v % 2, player2: resBody.result})
+	})
+})
+
 
 app.listen(PORT, () => console.log('Example app listening on port'+ PORT))
 

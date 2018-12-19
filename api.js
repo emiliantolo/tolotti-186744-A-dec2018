@@ -19,14 +19,23 @@ app.get('/bimbumbam', (req, res) => {
 })
 
 app.get('/play', (req, res) => {
-
+    
+    let player1=parseInt(req.query.player1)
+    
+    if(0<player1 && 6>player1 && player1){
+	
     return fetch("https://tolotti-186744-a-dec2018.herokuapp.com/bimbumbam")
 	.then(response => {
 	    return response.json()})
 	.then(resBody => {
-	    let v=parseInt(resBody.result)+parseInt(req.query.player1)
-	    res.json({result: v % 2, player2: resBody.result})
+	    let v=parseInt(resBody.result)+player1
+	    res.status(200).json({result: v % 2, player2: resBody.result})
 	})
+    }
+    else{
+	res.status(400).send()
+    }
+	
 })
 
 
